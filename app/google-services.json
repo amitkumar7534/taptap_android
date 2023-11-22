@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "790584528287",
+    "project_id": "discover-addis-ca467",
+    "storage_bucket": "discover-addis-ca467.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:790584528287:android:6e587501fd67ef586f01aa",
+        "android_client_info": {
+          "package_name": "com.yookoo.discoveraddis"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDA1wq4q8dRuFaSuNbvX7P8iMTrsky7OHc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

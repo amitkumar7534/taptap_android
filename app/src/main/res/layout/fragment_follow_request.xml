@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:background="@drawable/ic_baseline_arrow_back_24"
+                android:padding="@dimen/_4sdp"
+                android:visibility="visible"
+                app:tint="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/montserrat_semibold"
+                android:gravity="center_horizontal"
+                android:text="Follow Request"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14sdp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/read_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:fontFamily="@font/montserrat_semibold"
+                android:gravity="center_horizontal"
+                android:text="Read All"
+                android:textColor="@color/red"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="bold"
+                android:visibility="invisible" />
+        </RelativeLayout>
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_200sdp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/no_request"></ImageView>
+
+            <TextView
+                android:id="@+id/no_request"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="center_horizontal"
+                android:text="No Follow Request !"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                android:visibility="visible" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/montserrat_regular"
+                android:gravity="center_horizontal"
+                android:text="When people ask to follow you, you'll see\ntheir requests here!"
+                android:textColor="@color/light_grey_100"
+                android:textSize="@dimen/_12sdp"
+                android:visibility="visible" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.2dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@color/light_grey">
+
+        </View>
+
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_12sdp"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="center_horizontal"
+                android:text="Suggested for you "
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                android:visibility="visible" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/follow_request_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_below="@+id/spinner_category"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:targetApi="lollipop" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        <LinearLayout
+            android:id="@+id/ll_no_data"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/_50sdp"
+            android:visibility="invisible">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_170sdp"
+                android:src="@drawable/ic_notifications" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/montserrat_semibold"
+                android:gravity="center_horizontal"
+                android:text="No notification found"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>

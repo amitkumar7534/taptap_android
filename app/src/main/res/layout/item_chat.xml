@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@drawable/bg_otp_border"
+    android:padding="@dimen/_10sdp"
+    android:layout_marginTop="@dimen/_10sdp"
+    android:layout_height="wrap_content">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/iv_profile_pic"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_centerVertical="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/iv_default_user"/>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/date_view"
+        android:layout_toRightOf="@+id/iv_profile_pic"
+        android:layout_marginLeft="@dimen/_8sdp"
+        android:layout_centerVertical="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/iv_profile_pic"
+            android:text="Kashish"
+            android:fontFamily="@font/montserrat_semibold"
+            android:textSize="@dimen/_12sdp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/tv_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/iv_profile_pic"
+            android:text="Hi, How are you?"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:textColor="@color/hint_color"
+            android:textSize="@dimen/_10sdp"
+            android:fontFamily="@font/montserrat_regular"
+            android:layout_below="@+id/tv_name"/>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/date_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true">
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1 min ago"
+            android:layout_alignParentEnd="true"
+            android:textSize="@dimen/_10sdp"
+            android:fontFamily="@font/montserrat_regular"/>
+
+        <TextView
+            android:id="@+id/tv_count"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:text="2"
+            android:background="@drawable/bg_circle"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/tv_name"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_gravity="right"
+            android:gravity="center"
+            android:fontFamily="@font/montserrat_regular"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_10sdp" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+<!--    <View-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0.5dp"-->
+<!--        android:background="@color/light_grey"-->
+<!--        android:layout_marginTop="@dimen/_10sdp"-->
+<!--       android:layout_below="@+id/iv_profile_pic"></View>-->
+
+</RelativeLayout>
+</layout>

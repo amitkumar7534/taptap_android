@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/rv_shade"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/notification_view"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_50sdp"
+            android:paddingLeft="@dimen/_8sdp"
+            android:paddingRight="@dimen/_8sdp"
+            android:background="@color/colortxtgreen">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Discover Addis Ababa"
+                android:layout_toLeftOf="@id/bell_view"
+                android:textColor="@color/white"
+                android:layout_centerVertical="true"
+                android:textSize="@dimen/_14sdp"
+                android:visibility="gone" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toLeftOf="@id/message_view"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/post_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/bg_search"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/_14sdp"
+                    android:paddingRight="@dimen/_14sdp"
+                    android:text="Post "
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp"
+                    android:visibility="visible" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/business_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:background="@drawable/bg_search"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/_14sdp"
+                    android:paddingRight="@dimen/_14sdp"
+                    android:text="Business "
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp"
+                    android:visibility="visible" />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+            <FrameLayout
+                android:id="@+id/bell_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true">
+
+                <ImageView
+                    android:id="@+id/bell"
+                    android:layout_width="@dimen/_22sdp"
+                    android:layout_height="@dimen/_22sdp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:tint="@color/white"
+                    android:adjustViewBounds="true"
+                    android:layout_marginRight="@dimen/_5sdp"
+                    android:src="@drawable/ic_bell" />
+
+                <TextView
+                    android:id="@+id/count"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="0"
+                    android:maxLines="2"
+                    android:layout_gravity="right"
+                    android:gravity="center"
+                    android:background="@drawable/bg_circle"
+                    android:layout_toLeftOf="@+id/user_image"
+                    android:layout_centerVertical="true"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/_8sdp" />
+            </FrameLayout>
+            <FrameLayout
+                android:id="@+id/message_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/_12sdp"
+                android:layout_toLeftOf="@id/bell_view">
+
+                <ImageView
+                    android:id="@+id/message"
+                    android:layout_width="@dimen/_22sdp"
+                    android:layout_height="@dimen/_22sdp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:tint="@color/white"
+                    android:adjustViewBounds="true"
+                    android:layout_marginRight="@dimen/_5sdp"
+                    android:src="@drawable/ic_message" />
+
+                <TextView
+                    android:id="@+id/messagecount"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="0"
+                    android:maxLines="2"
+                    android:layout_gravity="right"
+                    android:gravity="center"
+                    android:background="@drawable/bg_circle"
+                    android:layout_toLeftOf="@+id/user_image"
+                    android:layout_centerVertical="true"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/_8sdp" />
+            </FrameLayout>
+        </RelativeLayout>
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:id="@+id/splashContainer"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

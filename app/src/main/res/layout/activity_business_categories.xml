@@ -1,0 +1,2591 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/ic_baseline_arrow_back_24"
+            android:visibility="gone"
+            app:tint="@color/black" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/top_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:layout_marginBottom="@dimen/_12sdp"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/tstdashboard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Looking for any Nearbys ?"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:textColor="#000000"
+                android:textSize="20dp"></TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="#000000"
+                android:visibility="gone"
+                android:textSize="24sp">
+            </TextView>
+
+            <RelativeLayout
+                android:id="@+id/cl_departments_list_lnr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/bg_search"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/search"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/search_black"
+                    android:padding="@dimen/_5sdp" />
+
+                <EditText
+                    android:id="@+id/et_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_5sdp"
+                    android:layout_toLeftOf="@+id/search"
+                    android:background="@null"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:hint="Search Map for Places, business, nearbys "
+                    android:imeOptions="actionSearch"
+                    android:inputType="text"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/hint_color"
+                    android:textSize="@dimen/_10sdp" />
+            </RelativeLayout>
+
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/top_view">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_category"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                        app:spanCount="2" />
+                    <!--
+                            <GridLayout
+                                android:columnCount="2"
+                                android:rowCount="3"
+                                android:alignmentMode="alignMargins"
+                                android:columnOrderPreserved="false"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dhotels"
+                                            android:src="@drawable/hotel"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+                                            android:textSize="18sp"
+                                            android:text="Hotels"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dbnbs"
+                                            android:src="@drawable/ic_bnb"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="BnB"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dmuseums"
+                                            android:src="@drawable/ic_museums"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Museums"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dparks"
+                                            android:src="@drawable/park"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Parks"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dhistoriacalsites"
+                                            android:src="@drawable/historic_site"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="14sp"
+                                            android:text="Hist Sites"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dgalleries"
+                                            android:src="@drawable/ic_sculpture"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Galleries"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dculturalcenters"
+                                            android:src="@drawable/culture_dress"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Culture center"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dstations"
+                                            android:src="@drawable/fue_station"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Monuments"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dlibraries"
+                                            android:src="@drawable/ic_library"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Libraries"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dafrican_related"
+                                            android:src="@drawable/ic_library"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="African"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+                                    android:layout_marginLeft="6dp"
+                                    android:layout_marginRight="6dp"
+                                    android:elevation="12dp"
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/nearbyrestaurants"
+                                            android:src="@drawable/ic_restaurant_new"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+
+                                            android:textColor="@color/PinkRose"
+                                            android:textSize="18sp"
+                                            android:text="Rests"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dshops"
+                                            android:src="@drawable/ic_shop"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Shops"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dbanks"
+                                            android:src="@drawable/ic_bank"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Banks"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dapartments"
+                                            android:src="@drawable/ic_apartment"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Apamts"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dcarrental"
+                                            android:src="@drawable/ic_car_rental"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Car Rent"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dpostalservices"
+                                            android:src="@drawable/ic_post_office"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Post office"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dtouragents"
+                                            android:src="@drawable/ic_tour_agents"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Tour n Tr."
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+                                <androidx.cardview.widget.CardView
+                                    xmlns:android="http://schemas.android.com/apk/res/android"
+                                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                                    xmlns:tools="http://schemas.android.com/tools"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardElevation="12dp"
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dairports"
+                                            android:src="@drawable/ic_airport"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+                                            android:textSize="18sp"
+                                            android:text="Airports"
+
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dlaundrys"
+                                            android:src="@drawable/ic_laundry"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Laundry"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dopenmarkets"
+                                            android:src="@drawable/ic_market_place"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Open Mrkts"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dtailors"
+                                            android:src="@drawable/ic_tailor"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Tailors"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dazmari"
+                                            android:src="@drawable/ic_musician"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Azmaris"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dshoemaker"
+                                            android:src="@drawable/ic_shoemaker"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Shoe Maker"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/datms"
+                                            android:src="@drawable/ic_atm_machine"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="ATM"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dexchangecenter"
+                                            android:src="@drawable/currency_exchange"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Exchange"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dhospitals"
+                                            android:src="@drawable/hospital"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Hospitals"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dclinics"
+                                            android:src="@drawable/clinic"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Clinics"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dpharmacies"
+                                            android:src="@drawable/ic_pharmacy_new"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Pharmacy"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dcinimas"
+                                            android:src="@drawable/cinema"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Cinimas"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dsportsclubs"
+                                            android:src="@drawable/club"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Sport Club"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dwildlife"
+                                            android:src="@drawable/ic_deer"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Wild Life"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dnwonders"
+                                            android:src="@drawable/ic_natural_wonder"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="N-Wonders"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/devents"
+                                            android:src="@drawable/ic_event"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Events"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dsalons"
+                                            android:src="@drawable/ic_hairstyle"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Salons"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dmakeup"
+                                            android:src="@drawable/ic_makeup"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Makeup"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dresorts"
+                                            android:src="@drawable/resort"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Resorts"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dplaygrounds"
+                                            android:src="@drawable/playground"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Play G."
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dembasies"
+                                            android:src="@drawable/embassy"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Embasies"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/duniversities"
+                                            android:src="@drawable/university"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Univs"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dcollege"
+                                            android:src="@drawable/ic_college"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="College"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dschools"
+                                            android:src="@drawable/ic_school_new"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Schools"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dchurches"
+                                            android:src="@drawable/ic_church"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Churches"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dmosques"
+                                            android:src="@drawable/ic_mosque"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Mosques"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dtaverns"
+                                            android:src="@drawable/tavern"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Taverns"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dtaxistands"
+                                            android:src="@drawable/taxi"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Taxi Stands"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dbusstation"
+                                            android:src="@drawable/bus_station"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Bus station"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dbusstop"
+                                            android:src="@drawable/bus_stop"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Bus Stop"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dtrainstation"
+                                            android:src="@drawable/train_station"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Train Stn"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dmanufacturers"
+                                            android:src="@drawable/factory"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Factories"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dclubs"
+                                            android:src="@drawable/night_club"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="N. Clubs"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dcultureevents"
+                                            android:src="@drawable/people"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="14sp"
+                                            android:text="Culture Events"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dlabs"
+                                            android:src="@drawable/ic_labs"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Labs"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dmalls"
+                                            android:src="@drawable/ic_mall_new"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Malls"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dsupermarkets"
+                                            android:src="@drawable/supermarket"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Super Market"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dgovoffice"
+                                            android:src="@drawable/government_office"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Gov.offices"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dngos"
+                                            android:src="@drawable/government_office"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="NGov.offices"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dmassages"
+                                            android:src="@drawable/massage"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Massages"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dphotoshops"
+                                            android:src="@drawable/photo_shop"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Photo shops"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dcafterias"
+                                            android:src="@drawable/cafe"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Cafe"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dcoffeh"
+                                            android:src="@drawable/coffee"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Coffee H."
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dstadium"
+                                            android:src="@drawable/stadium"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Stadium"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dbakeries"
+                                            android:src="@drawable/bakery_shop"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Bakery"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dbuscentera"
+                                            android:src="@drawable/skyscrapper"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="18sp"
+                                            android:text="Busness center"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_columnWeight="1"
+                                    android:layout_rowWeight="1"
+
+                                    app:cardCornerRadius="12dp"
+                                    android:layout_margin="12dp"
+                                    >
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:padding="16dp"
+                                        android:gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+
+                                        >
+                                        <ImageView
+                                            android:id="@+id/dbuscenter"
+                                            android:src="@drawable/police_station"
+                                            android:layout_width="80dp"
+                                            android:layout_height="150dp">
+
+                                        </ImageView>
+                                        <TextView
+                                            android:layout_marginTop="12dp"
+                                            android:textColor="@color/PinkRose"
+
+                                            android:textSize="14sp"
+                                            android:text="Police Station"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                            </GridLayout>
+                    -->
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </RelativeLayout>
+</layout>

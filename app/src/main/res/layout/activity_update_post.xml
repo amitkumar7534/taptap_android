@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:padding="@dimen/_4sdp"
+            android:background="@drawable/ic_baseline_arrow_back_24"
+            app:tint="@color/black" />
+
+        <TextView
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:gravity="center_horizontal"
+            android:text="Update Post" />
+
+        <ScrollView
+            android:id="@+id/scroll_card"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below ="@+id/iv_back"
+            android:layout_above ="@id/submit_button">
+
+            <LinearLayout
+                android:id="@+id/mainLayout_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/_20sdp"
+                android:layout_margin="@dimen/padding10">
+
+                <TextView
+                    android:textColor="@color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:textSize="20dp"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:gravity="left"
+                    android:text="Choose Post type" />
+
+
+
+                <RadioGroup
+                    android:id="@+id/radioGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true">
+                    <RadioButton
+                        android:id="@+id/radioBtn1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="Create a post "
+                        android:textSize="@dimen/_14sdp"/>
+                    <RadioButton
+                        android:id="@+id/radioBtn2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add a product"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:textSize="@dimen/_14sdp"/>
+                </RadioGroup>
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_upload"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_150sdp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/ic_upload_post"/>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/_6sdp"
+                    android:layout_marginRight="@dimen/_6sdp"
+                    android:layout_marginBottom="@dimen/_6sdp"
+                    android:orientation="vertical">
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Title"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:layout_marginTop="@dimen/_14sdp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_14sdp"></androidx.appcompat.widget.AppCompatTextView>
+
+                    <EditText
+                        android:textColor="@color/black"
+                        android:id="@+id/title_name"
+                        android:layout_height="48dp"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="@dimen/padding15"
+                        android:layout_marginEnd="@dimen/padding5"
+                        android:layout_weight="1"
+                        android:paddingStart="10dp"
+                        android:singleLine="true"
+                        android:minHeight="48dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:background="@drawable/text_border"
+                        tools:ignore="SpeakableTextPresentCheck" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_price"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Price"
+                        android:visibility="gone"
+                        android:layout_marginTop="@dimen/_14sdp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:textSize="@dimen/_14sdp"/>
+
+                    <EditText
+                        android:textColor="@color/black"
+                        android:id="@+id/et_price"
+                        android:layout_height="48dp"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="@dimen/padding15"
+                        android:layout_marginEnd="@dimen/padding5"
+                        android:layout_weight="1"
+                        android:visibility="gone"
+                        android:paddingStart="10dp"
+                        android:singleLine="true"
+                        android:minHeight="48dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:background="@drawable/text_border"
+                        tools:ignore="SpeakableTextPresentCheck" />
+
+
+
+
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        >
+                        <Spinner
+                            android:id="@+id/regspinner_business_kebele"
+                            android:layout_width="fill_parent"
+                            android:layout_height="45dp" />
+                    </LinearLayout>
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Description"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:layout_marginTop="@dimen/_14sdp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_14sdp"></androidx.appcompat.widget.AppCompatTextView>
+
+                    <EditText
+                        android:textColor="@color/black"
+                        android:id="@+id/et_description"
+                        android:layout_height="@dimen/_70ssp"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:padding="15dp"
+                        android:layout_gravity="top"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="top"
+                        android:background="@drawable/text_border"
+                        android:visibility="visible" />
+                </LinearLayout>
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:visibility="gone"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_60ssp"
+                        android:src="@drawable/ic_upload_image"
+                        android:layout_margin="@dimen/_12sdp"
+                        android:scaleType="centerCrop"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true">
+
+                    </androidx.appcompat.widget.AppCompatImageView>
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_60ssp"
+                        android:src="@drawable/ic_upload_image"
+                        android:layout_weight="1"
+                        android:scaleType="centerCrop"
+                        android:layout_margin="@dimen/_12sdp"
+                        android:adjustViewBounds="true">
+
+                    </androidx.appcompat.widget.AppCompatImageView>
+
+
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <!-- <fragment
+                     android:id="@+id/regmap"
+                     android:layout_width="match_parent"
+                     android:layout_height="600dp"
+                     android:name="com.google.android.gms.maps.SupportMapFragment"/>-->
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+        <Button
+            android:id="@+id/submit_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/bg_search"
+            android:text="Update"
+            android:layout_alignParentBottom="true"
+            android:backgroundTint="@color/colortxtgreen"
+            android:fontFamily="@font/montserrat_semibold"
+            android:textColor="@android:color/white" />
+
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/busreg_btn"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:minHeight="48dp"-->
+        <!--            android:layout_alignParentBottom="true"-->
+        <!--            android:layout_centerHorizontal="true"-->
+        <!--            android:layout_marginTop="@dimen/padding10"-->
+        <!--            android:layout_marginBottom="@dimen/padding10"-->
+        <!--            android:gravity="center_horizontal"-->
+        <!--            android:background="@color/black"-->
+        <!--            android:textColor="@color/white"-->
+        <!--            android:textSize="30sp"-->
+        <!--            android:text="Submit" />-->
+    </RelativeLayout>
+
+</layout>

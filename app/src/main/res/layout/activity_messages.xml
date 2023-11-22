@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/above_tab"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/bottom_view"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:adjustViewBounds="true"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/_3sdp"
+                    android:layout_marginLeft="@dimen/_12sdp"
+                    android:src="@drawable/arrowback"></androidx.appcompat.widget.AppCompatImageView>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:gravity="center"
+                    android:visibility="visible"
+                    android:layout_centerVertical="true"
+                    android:text="Kashish"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16sdp"></androidx.appcompat.widget.AppCompatTextView>
+
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:visibility="gone"
+                    android:layout_marginBottom="@dimen/_6sdp"
+                    android:layout_marginLeft="@dimen/_7sdp">
+
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:id="@+id/job_profile"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:layout_centerVertical="true"
+                        android:adjustViewBounds="true"
+                        app:riv_corner_radius="@dimen/_24sdp"
+                        android:src="@drawable/iv_default_user">
+
+                    </com.makeramen.roundedimageview.RoundedImageView>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/titles"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/_7sdp"
+                        android:layout_toRightOf="@+id/job_profile"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/job_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:layout_toRightOf="@+id/user_profile"
+                            android:text="Orlando Diggs"
+                            android:layout_toLeftOf="@+id/ic_chat"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"></androidx.appcompat.widget.AppCompatTextView>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </RelativeLayout>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/user_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:targetApi="lollipop" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        <RelativeLayout
+            android:id="@+id/bottom_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/_12sdp"
+                android:layout_toLeftOf="@+id/ic_send_message"
+                android:layout_gravity="bottom"
+                android:layout_centerVertical="true"
+                android:layout_margin="@dimen/_5sdp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ic_upload_pic"
+                        android:layout_width="@dimen/_22sdp"
+                        android:layout_height="@dimen/_22sdp"
+                        android:layout_centerVertical="true"
+                        android:adjustViewBounds="true"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:src="@drawable/ic_add_image"></androidx.appcompat.widget.AppCompatImageView>
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:hint="Write your message"
+                        android:background="@null"
+                        android:layout_toRightOf="@+id/ic_upload_pic"
+                        android:textColorHint="@color/hint_color"
+                        android:textSize="@dimen/_12sdp">
+
+                    </androidx.appcompat.widget.AppCompatEditText>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <RelativeLayout
+                android:id="@+id/ic_send_message"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/ic_send">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ic_send"
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/_4sdp"
+                    android:adjustViewBounds="true"
+                    android:padding="@dimen/padding2"
+                    android:layout_marginLeft="@dimen/_4sdp"
+                    android:src="@drawable/ic_send_message"></androidx.appcompat.widget.AppCompatImageView>
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

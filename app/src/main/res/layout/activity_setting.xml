@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/ic_baseline_arrow_back_24"
+                app:tint="@color/black" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:gravity="center"
+                android:text="Setting"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/white" />
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="25dp"
+                android:paddingVertical="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:text="Dark Mode"
+                        android:textColor="@color/black"
+                        android:textSize="15dp" />
+
+                    <Switch
+                        android:id="@+id/switch_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="20dp"
+                        android:backgroundTint="@color/white"
+                        android:buttonTint="@color/white"
+                        android:thumbTint="#C2FFAC"
+                        android:trackTint="@color/white"
+                        tools:ignore="UseSwitchCompatOrMaterialXml" />
+                </RelativeLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/add_notification_view"
+                    android:layout_width="match_parent"
+                    android:visibility="visible"
+                    android:layout_height="@dimen/_70sdp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="@dimen/_15sdp"
+                    app:cardElevation="2dp"
+                    app:cardMaxElevation="1dp"
+                    app:cardPreventCornerOverlap="true"
+                    app:cardUseCompatPadding="true">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/ic_cars"
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_12sdp"
+                            android:src="@drawable/ic_terms">
+
+                        </ImageView>
+
+                        <ImageView
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_12sdp"
+                            android:padding="@dimen/_8sdp"
+                            android:src="@drawable/ic_nect_arrow">
+
+                        </ImageView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_toRightOf="@+id/ic_cars"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:gravity="start"
+                            android:text="Add Notification"
+                            android:textColor="@color/black"
+                            android:textSize="15dp" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/add_car_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_70sdp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="@dimen/_15sdp"
+                    app:cardElevation="2dp"
+                    app:cardMaxElevation="1dp"
+                    app:cardPreventCornerOverlap="true"
+                    app:cardUseCompatPadding="true">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/ic_car"
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_12sdp"
+                            android:src="@drawable/ic_terms">
+
+                        </ImageView>
+
+                        <ImageView
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_12sdp"
+                            android:padding="@dimen/_8sdp"
+                            android:src="@drawable/ic_nect_arrow">
+
+                        </ImageView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_toRightOf="@+id/ic_car"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:gravity="start"
+                            android:text="Add Car"
+                            android:textColor="@color/black"
+                            android:textSize="15dp" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/my_busieness_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_70sdp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="@dimen/_15sdp"
+                    app:cardElevation="2dp"
+                    app:cardMaxElevation="1dp"
+                    app:cardPreventCornerOverlap="true"
+                    app:cardUseCompatPadding="true">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                        <ImageView
+                            android:id="@+id/ic_business"
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_12sdp"
+                            android:src="@drawable/ic_terms">
+
+                        </ImageView>
+
+                        <ImageView
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_12sdp"
+                            android:padding="@dimen/_8sdp"
+                            android:src="@drawable/ic_nect_arrow">
+
+                        </ImageView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_toRightOf="@+id/ic_business"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:gravity="start"
+                            android:text="My Bussiness"
+                            android:textColor="@color/black"
+                            android:textSize="15dp" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/my_car_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_70sdp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="@dimen/_15sdp"
+                    app:cardElevation="2dp"
+                    app:cardMaxElevation="1dp"
+                    app:cardPreventCornerOverlap="true"
+                    app:cardUseCompatPadding="true">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                        <ImageView
+                            android:id="@+id/ic_my_car"
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_12sdp"
+                            android:src="@drawable/ic_terms">
+
+                        </ImageView>
+
+                        <ImageView
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_12sdp"
+                            android:padding="@dimen/_8sdp"
+                            android:src="@drawable/ic_nect_arrow">
+
+                        </ImageView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_toRightOf="@+id/ic_my_car"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:gravity="start"
+                            android:text="My Car's"
+                            android:textColor="@color/black"
+                            android:textSize="15dp" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/my_account"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_70sdp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="@dimen/_15sdp"
+                    app:cardElevation="2dp"
+                    app:cardMaxElevation="1dp"
+                    app:cardPreventCornerOverlap="true"
+                    app:cardUseCompatPadding="true">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                        <ImageView
+                            android:id="@+id/ic_my_account"
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_12sdp"
+                            android:src="@drawable/ic_terms">
+
+                        </ImageView>
+
+                        <ImageView
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_12sdp"
+                            android:padding="@dimen/_8sdp"
+                            android:src="@drawable/ic_nect_arrow">
+
+                        </ImageView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_toRightOf="@+id/ic_my_account"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:gravity="start"
+                            android:text="My Account"
+                            android:textColor="@color/black"
+                            android:textSize="15dp" />
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/terms_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_70sdp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="@dimen/_15sdp"
+                    app:cardElevation="2dp"
+                    app:cardMaxElevation="1dp"
+                    app:cardPreventCornerOverlap="true"
+                    app:cardUseCompatPadding="true">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                        <ImageView
+                            android:id="@+id/ic_terms"
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_12sdp"
+                            android:src="@drawable/ic_terms">
+
+                        </ImageView>
+
+                        <ImageView
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_12sdp"
+                            android:padding="@dimen/_8sdp"
+                            android:src="@drawable/ic_nect_arrow">
+
+                        </ImageView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_toRightOf="@+id/ic_terms"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:gravity="start"
+                            android:text="Terms &amp; Conditions"
+                            android:textColor="@color/black"
+                            android:textSize="15dp" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/privacy_policy"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_70sdp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="@dimen/_15sdp"
+                    app:cardElevation="2dp"
+                    app:cardMaxElevation="1dp"
+                    app:cardPreventCornerOverlap="true"
+                    app:cardUseCompatPadding="true">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                        <ImageView
+                            android:id="@+id/ic_privacy"
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_12sdp"
+                            android:src="@drawable/ic_about_app">
+
+                        </ImageView>
+
+                        <ImageView
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_12sdp"
+                            android:padding="@dimen/_8sdp"
+                            android:src="@drawable/ic_nect_arrow">
+
+                        </ImageView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_toRightOf="@+id/ic_privacy"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:gravity="start"
+                            android:text="Privacy Policy"
+                            android:textColor="@color/black"
+                            android:textSize="15dp" />
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/app_info_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_70sdp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="@dimen/_15sdp"
+                    app:cardElevation="2dp"
+                    app:cardMaxElevation="1dp"
+                    app:cardPreventCornerOverlap="true"
+                    app:cardUseCompatPadding="true">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/ic_app_info"
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_12sdp"
+                            android:src="@drawable/ic_fq"></ImageView>
+
+                        <ImageView
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_12sdp"
+                            android:padding="@dimen/_8sdp"
+                            android:src="@drawable/ic_nect_arrow">
+
+                        </ImageView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_toRightOf="@+id/ic_app_info"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:gravity="start"
+                            android:text="App Info"
+                            android:textColor="@color/black"
+                            android:textSize="15dp" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/f_and_q"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_70sdp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="@dimen/_15sdp"
+                    app:cardElevation="2dp"
+                    app:cardMaxElevation="1dp"
+                    app:cardPreventCornerOverlap="true"
+                    app:cardUseCompatPadding="true">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/ic_F"
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_12sdp"
+                            android:src="@drawable/ic_app_info">
+
+                        </ImageView>
+
+                        <ImageView
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_12sdp"
+                            android:padding="@dimen/_8sdp"
+                            android:src="@drawable/ic_nect_arrow">
+
+                        </ImageView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_toRightOf="@+id/ic_F"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:gravity="start"
+                            android:text="F &amp; Q"
+                            android:textColor="@color/black"
+                            android:textSize="15dp" />
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/view_logout"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_70sdp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="@dimen/_15sdp"
+                    app:cardElevation="2dp"
+                    app:cardMaxElevation="1dp"
+                    android:visibility="gone"
+                    app:cardPreventCornerOverlap="true"
+                    app:cardUseCompatPadding="true">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/ic_logout"
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_12sdp"
+                            android:src="@drawable/ic_app_info">
+
+                        </ImageView>
+
+                        <ImageView
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_12sdp"
+                            android:padding="@dimen/_8sdp"
+                            android:src="@drawable/ic_nect_arrow">
+
+                        </ImageView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_toRightOf="@+id/ic_logout"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:gravity="start"
+                            android:text="Logout"
+                            android:textColor="@color/black"
+                            android:textSize="15dp" />
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/delete_account"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_70sdp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="@dimen/_15sdp"
+                    app:cardElevation="2dp"
+                    app:cardMaxElevation="1dp"
+                    app:cardPreventCornerOverlap="true"
+                    app:cardUseCompatPadding="true">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/ic_delete_account"
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_12sdp"
+                            android:src="@drawable/baseline_delete_24"
+                            app:tint="@color/red"></ImageView>
+
+                        <ImageView
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_12sdp"
+                            android:padding="@dimen/_8sdp"
+                            android:src="@drawable/ic_nect_arrow">
+
+                        </ImageView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_toRightOf="@+id/ic_delete_account"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:gravity="start"
+                            android:text="Delete Account"
+                            android:textColor="@color/red"
+                            android:textSize="15dp" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

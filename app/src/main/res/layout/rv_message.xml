@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_marginBottom="@dimen/_6sdp"
+            android:layout_marginLeft="@dimen/_7sdp">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/job_profile"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:adjustViewBounds="true"
+                android:layout_centerVertical="true"
+                app:riv_corner_radius="@dimen/_24sdp"
+                android:src="@drawable/iv_default_user">
+
+            </com.makeramen.roundedimageview.RoundedImageView>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/titles"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/_7sdp"
+                android:layout_toRightOf="@+id/job_profile"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/job_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="Hello sir, Good Morning"
+                    android:layout_toLeftOf="@+id/ic_chat"
+                    android:backgroundTint="#EFF0F1"
+                    android:padding="@dimen/_12sdp"
+                    android:background="@drawable/bg_otp_border"
+                    android:layout_marginLeft="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp"></androidx.appcompat.widget.AppCompatTextView>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/ic_message_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="09:30 am"
+                    android:layout_toLeftOf="@+id/ic_chat"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/_12sdp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp"></androidx.appcompat.widget.AppCompatTextView>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/other_user_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_marginBottom="@dimen/_6sdp"
+            android:layout_marginLeft="@dimen/_7sdp">
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/my_message_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/_7sdp"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/my_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="Hello sir, Good Morning"
+                    android:layout_toLeftOf="@+id/ic_chat"
+                    android:backgroundTint="@color/colortxtgreen"
+                    android:padding="@dimen/_12sdp"
+                    android:background="@drawable/bg_otp_border"
+                    android:layout_marginLeft="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp"></androidx.appcompat.widget.AppCompatTextView>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/my_message_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="09:30 am"
+                    android:layout_gravity="right"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/_12sdp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp"></androidx.appcompat.widget.AppCompatTextView>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+
+        </RelativeLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>

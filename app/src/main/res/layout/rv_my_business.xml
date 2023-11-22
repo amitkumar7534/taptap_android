@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp">
+
+        <RelativeLayout
+            android:id="@+id/rl_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <RelativeLayout
+                android:layout_toRightOf="@+id/bookedmenuPic_img"
+                android:layout_marginStart="-30dp"
+                android:padding="@dimen/_10sdp"
+                android:background="@drawable/bg_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/edit_delete_view"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/bookedmenuName_inc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:singleLine="true"
+                        android:text="Business name"
+                        android:textSize="@dimen/_13sdp"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/arrivingusername_inc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/bookedmenuName_inc"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toLeftOf="@+id/delete"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:singleLine="true"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:textSize="@dimen/_10sdp"
+                        android:text="3 min driving time"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="#666" />
+
+                    <TextView
+                        android:id="@+id/bookerarrivaldatetime_inc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/arrivingusername_inc"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toLeftOf="@+id/delete"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:hint="20 min Walking Time"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:maxLines="2"
+                        android:textSize="@dimen/_10sdp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="#666" />
+
+                    <TextView
+                        android:id="@+id/booked_date_time_inc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/bookerarrivaldatetime_inc"
+                        android:layout_marginLeft="5dp"
+                        android:padding="@dimen/padding5"
+                        android:text="8000 Total Visits"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="#666"
+                        android:visibility="gone" />
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/edit_delete_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/delete"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/button_black_background"
+                        android:backgroundTint="#F80505"
+                        android:text=" Delete "
+                        android:textSize="@dimen/_10sdp"
+                        android:textColor="@color/white"
+                        android:visibility="visible" />
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/edit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/button_black_background"
+                        android:backgroundTint="@color/colortxtgreen"
+                        android:text=" Edit "
+                        android:textColor="@color/white"
+                        android:visibility="visible" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/lay_km"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:visibility="gone"
+                    android:background="@drawable/bg_search"
+                    android:backgroundTint="@color/colortxtgreen"
+                    android:orientation="horizontal"
+                    android:paddingRight="@dimen/_2sdp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_12sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:padding="@dimen/_1sdp"
+                        android:src="@drawable/baseline_location_on_24"
+                        app:tint="@color/white"></ImageView>
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/totalarriving_users_inc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="2.0 km"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_9sdp" />
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </RelativeLayout>
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/bookedmenuPic_img"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:adjustViewBounds="true"
+                android:layout_centerVertical="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/iv_default_user"
+                app:riv_corner_radius="@dimen/_15sdp" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/rv_shade"
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:paddingLeft="@dimen/_8sdp"
+            android:paddingRight="@dimen/_8sdp">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/user_image"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                app:riv_corner_radius="@dimen/_20sdp"
+                android:layout_centerVertical="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_post_default">
+
+            </com.makeramen.roundedimageview.RoundedImageView>
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/three_dots"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:scaleType="fitXY"
+                android:padding="@dimen/_5sdp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_three_dots">
+            </androidx.appcompat.widget.AppCompatImageView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/user_name"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_gravity="bottom"
+                android:layout_toRightOf="@id/user_image"
+                android:fontFamily="@font/montserrat_semibold"
+                android:gravity="left|center"
+                android:layout_toLeftOf="@+id/three_dots"
+                android:layout_marginRight="@dimen/_12sdp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:layout_centerVertical="true"
+                android:singleLine="true"
+                android:text="Testing"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13sdp" />
+        </RelativeLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/bookedmenuPic_img"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:layout_centerVertical="true" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/bookedmenuName_inc"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_gravity="bottom"
+                android:background="#80000000"
+                android:fontFamily="@font/montserrat_semibold"
+                android:gravity="left|center"
+                android:singleLine="true"
+                android:paddingStart="@dimen/_10sdp"
+                android:text="Business name"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13sdp" />
+        </FrameLayout>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/decription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:fontFamily="@font/montserrat_regular"
+            android:gravity="left|center"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_2ssp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_13sdp" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/read_more"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:fontFamily="@font/montserrat_bold"
+            android:gravity="right"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_2ssp"
+            android:textColor="@color/red"
+            android:visibility="visible"
+            android:text="Read More"
+            android:textSize="@dimen/_13sdp" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/product_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:fontFamily="@font/montserrat_medium"
+            android:gravity="left|center"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_2ssp"
+            android:text="Price - $200"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_13sdp" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/post_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:fontFamily="@font/montserrat_semibold"
+            android:gravity="left|center"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:layout_marginTop="@dimen/_2ssp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:text="2 hours ago"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_13sdp" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5sdp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_weight="1">
+
+                <com.like.LikeButton
+                    android:id="@+id/likeButton"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:padding="@dimen/_5sdp"
+                    app:icon_type="Star"
+                    app:circle_start_color="@color/colorPrimary"
+                    app:like_drawable="@drawable/heart_clicked"
+                    app:unlike_drawable="@drawable/heart_not_clicked"
+                    android:layout_gravity="center_vertical"
+                    app:dots_secondary_color="@color/colorPrimary"
+                    app:icon_size="25dp"
+                    app:liked="false"
+                    app:anim_scale_factor="2"
+                    />
+
+            <!--    <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_fav">
+                </androidx.appcompat.widget.AppCompatImageView>-->
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/like_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginLeft="5dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:gravity="left|center"
+                    android:singleLine="true"
+                    android:text="Like (10)"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/view_post"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_weight="1">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_gravity="center_vertical"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/ic_view">
+
+                </androidx.appcompat.widget.AppCompatImageView>
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/view_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginLeft="5dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:gravity="left|center"
+                    android:singleLine="true"
+                    android:text="View (10)"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp" />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/ll_comment"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_weight="1">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_gravity="center_vertical"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/ic_comment">
+
+                </androidx.appcompat.widget.AppCompatImageView>
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/comment_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginLeft="5dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:gravity="left|center"
+                    android:singleLine="true"
+                    android:text="Comment"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/light_grey"></View>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:padding="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_height="wrap_content">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/iv_profile_pic"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_centerVertical="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/iv_default_user"/>
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/iv_profile_pic"
+            android:text="Kashish"
+            android:layout_toLeftOf="@+id/_follow_view"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:fontFamily="@font/montserrat_regular"
+            android:textSize="@dimen/_10sdp"
+            android:textColor="@color/black"/>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/_follow_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:background="@drawable/bg_otp_border"
+                android:backgroundTint="@color/colortxtgreen"
+                android:gravity="center"
+                android:paddingRight="@dimen/_10sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:paddingLeft="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center_vertical"
+                    android:text="Follow"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_10sdp"></androidx.appcompat.widget.AppCompatTextView>
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:background="@drawable/bg_otp_border"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingRight="@dimen/_10sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:visibility="gone"
+                android:paddingBottom="@dimen/_5sdp"
+                android:paddingLeft="@dimen/_10sdp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center_vertical"
+                    android:text="Delete"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp"></androidx.appcompat.widget.AppCompatTextView>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <!--    <View-->
+        <!--        android:layout_width="match_parent"-->
+        <!--        android:layout_height="0.5dp"-->
+        <!--        android:background="@color/light_grey"-->
+        <!--        android:layout_marginTop="@dimen/_10sdp"-->
+        <!--       android:layout_below="@+id/iv_profile_pic"></View>-->
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:AvatarView="http://schemas.android.com/tools"
+    android:layout_marginTop="20dp"
+    android:layout_marginStart="6dp"
+    android:layout_marginEnd="6dp"
+    app:cardElevation="30dp"
+    android:layout_weight="6"
+    app:cardCornerRadius="5dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:id="@+id/cl_departments_list_lnr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <ImageView
+            android:layout_marginTop="20dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/search_black"
+            />
+        <EditText
+            android:id="@+id/txt_cl_deps_phon_cardnum"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="5dp"
+            android:hint="Destination Name "
+            android:textColorHint="@color/black"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:inputType="text"
+            android:layout_marginEnd="20dp"
+            />
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+
+
+        android:orientation="vertical">
+        <LinearLayout
+
+
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+
+
+
+            android:orientation="vertical">
+
+
+
+            <TextView
+                android:id="@+id/tour_business_namea"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Business Name"
+                android:layout_marginStart="10dp"
+                android:paddingTop="0dp"
+
+
+
+                android:paddingStart="10dp"
+                android:gravity="center_horizontal"
+                android:textStyle="bold"
+                android:textSize="24sp"
+
+
+
+                android:layout_marginTop="20dp"
+                android:textColor="@color/colortxtgreen" />
+        </LinearLayout>
+
+
+
+        <RelativeLayout
+            android:id="@+id/gthj"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content">
+
+
+
+            <ImageView
+                android:id="@+id/tour_business_logocontainera"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:minHeight="200dp"
+                android:scaleType="fitXY"
+                android:contentDescription="TODO" />
+
+
+
+        </RelativeLayout>
+
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/black" />
+
+
+
+        <LinearLayout
+
+
+
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/button_black_background"
+            android:orientation="horizontal">
+
+
+
+            <TextView
+
+
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:text="Update"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:text="Delete"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:text="Hide"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+    </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
